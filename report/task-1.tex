@@ -18,9 +18,8 @@
 
 % ______________________________________________________________________________
 \section{Task 1 -- Personal Planning}
-
-\subsection{Instructions}\label{task-1-instructions}
-Instructions quoted as-is from the course Wiki \cite{1dv600:lab1:instructions}.
+% \subsection{Instructions}\label{task-1-instructions}
+Instructions quoted as-is from the course Wiki \cite{1dv600:lab1:instructions}:
 
 \begin{quote}
   When the client requests a list of books to present for the user it does the
@@ -32,7 +31,6 @@ Instructions quoted as-is from the course Wiki \cite{1dv600:lab1:instructions}.
   the following pattern for all subtasks (A, B, C):
   
   \begin{itemize}
-    \tightlist
     \item Plan
     \item Implement
     \item Reflect
@@ -44,7 +42,8 @@ Instructions quoted as-is from the course Wiki \cite{1dv600:lab1:instructions}.
 
 % ______________________________________________________________________________
 \section{Subtask A -- Books}\label{task-1a}
-\subsection{Instructions}\label{task-1a-instructions}
+% \subsection{Instructions}\label{task-1a-instructions}
+Instructions quoted as-is from the course Wiki \cite{1dv600:lab1:instructions}:
 
 \begin{quote}
   The main objective of the subtask is to create a list of books and a function
@@ -79,12 +78,10 @@ to make it flexible and open for future modifications, as stated by the well kno
 The class \texttt{book} should meet the following requirements:
 
 \begin{itemize}
-\tightlist
   \item Store information needed to describe books handled by the system.
         We are to include the following set of attributes:
 
   \begin{itemize}
-    \tightlist
     \item Id
     \item Title
     \item Author
@@ -116,39 +113,108 @@ requirements.
 % Wrapper data types would be better
 
 
-\subsection{Implement}\label{implement}
+\subsection{Implement}\label{task-1a-implement}
+The class was implemented in less than 10 minutes. What followed was
+investigating bugs in the underlying framework ``dropwizard''
+\cite{framework:dropwizard}.  The problems seems to be caused by printing a
+combination of newlines and other characters to ``stdout'', which is hooked by
+either ``dropwizard'' or the build system ``gradle'' \cite{tool:gradle}, in
+order to add additinal information and timestamps to the message.
 
-\subsection{Reflect}\label{reflect}
+
+\subsection{Reflect}\label{task-1a-reflect}
+This simple implementation matches the criteria which seems vague at this point,
+the \texttt{book} class presents its state in JSON-format, and so deciding on
+how the internal data types and overall program structure, including how
+the different parts communicate, becomes very difficult.
+I know for a fact that this simple implementation will need serious rework 
+in order to be extended. But making the design more involved and modular
+at this stage, with no information to go on, could possibly be a waste of time.
+
+There is a tradeoff between more initial work on features that might not even
+be useful in the future, but allowing for easier future expansion, versus less
+initial work which meets the current requirements but compounds additinal work
+over time due to a simple architecture that is more rigid and sensitive to
+changes in the system.
 
 
 % ______________________________________________________________________________
 \section{Subtask B -- JSON}\label{subtask-b-json}
-
-\subsection{Instructions}\label{instructions-2}
+% \subsection{Instructions}\label{task-1b-instructions}
+Instructions quoted as-is from the course Wiki \cite{1dv600:lab1:instructions}:
 
 \begin{quote}
-Convert the objects created in subtask a into an JSON object and show it
-in the terminal using either System.out.println(Java) or console.log
-(Node.js).
-
-\mbox{}%
-\subparagraph{Improvement Strategies}\label{improvement-strategies}
-
-Choose two improvement strategies based on your reflections on subtask a
-and b. Describe what you have decided to improve and why. Implement your
-improvements in the next subtask.
+  Convert the objects created in subtask a into an JSON object and show it in
+  the terminal using either System.out.println(Java) or console.log (Node.js).
+  
+  \subparagraph{Improvement Strategies}
+  
+  Choose two improvement strategies based on your reflections on subtask a and
+  b. Describe what you have decided to improve and why. Implement your 
+  improvements in the next subtask.
 \end{quote}
+
+\subsection{Plan}\label{task-1b-plan}
+As with the first subtask, the plan is to use the simplest possible solution
+that meets the requirements.
+The first implementation will use simple, error-prone and crude raw string
+manipulations to construct JSON-data.
+If this method performs as expected when integrated into the rest of the system,
+methods for converting from Java objects to JSON-data could be refactored into
+a separate utility package.
+
+\subsection{Implement}\label{task-1b-implement}
+The code was written in less than 5 minutes. The basic method for
+constructing the strings was re-used from the previous subtask.
+
+
+\subsection{Reflect}\label{task-1b-reflect}
+This should really be solved using the standard libraries native functions for
+handling JSON. In any case, the functions that take an object state and return
+a JSON representation should be extracted into a separate utility package for
+re-use across the entire project or even across all company projects.
+
+\subsubsection{Improvement Strategies}
+Based on the reflections on Subtask A \cite{task-1a-reflect} and Subtask B
+\cite{task-1b-reflect}, I have chosen the two following improvements:
+
+\begin{itemize}
+  \item Improve JSON handling by leveraging the Java libraries.
+  \item Modify how the book class is constructed.
+        % TODO: Sure about that?
+\end{itemize}
+
+
+
 
 
 % ______________________________________________________________________________
 \section{Subtask C -- Web}\label{subtask-c-web}
+\subsection{Instructions}\label{task-1-instructions}
+Instructions quoted as-is from the course Wiki \cite{1dv600:lab1:instructions}:
 
-In this subtask you are to answer the request in the web browser instead
-of printing it to the terminal. The subtask is done when you see the
-JSON object on screen. For inspiration, have a look at PingResource that
-you find in the same folder as the GetBooksResource. If you follow the
-\href{https://htmlpreview.github.io/?https://github.com/tobias-dv-lnu/1dv600-lab/blob/master/api-specification/api-specification.html}{API
-for the model} (as seen in
-\href{https://htmlpreview.github.io/?https://github.com/tobias-dv-lnu/1dv600-lab/blob/master/api-specification/api-specification.html\#books-get}{GET
-api/books})​, you will be able to show the books in the list.
+\begin{quote}
+  In this subtask you are to answer the request in the web browser instead of
+  printing it to the terminal. The subtask is done when you see the JSON object
+  on screen. For inspiration, have a look at PingResource that you find in the
+  same folder as the GetBooksResource. 
 
+  If you follow the 
+  \href{https://htmlpreview.github.io/?https://github.com/tobias-dv-lnu/1dv600-lab/blob/master/api-specification/api-specification.html}{API for the model}
+  (as seen in 
+  \href{https://htmlpreview.github.io/?https://github.com/tobias-dv-lnu/1dv600-lab/blob/master/api-specification/api-specification.html\#books-get}{GET api/books})
+  , you will be able to show the books in the list.
+\end{quote}
+
+
+\subsection{Plan}\label{task-1c-plan}
+As per the instructions, the plan is to look for the existing code to hints
+on how to meet the requested functionality.
+
+\subsection{Implement}\label{task-1c-implement}
+The implementation was done as part of experimeting with the previous two
+subtasks and the strange behaviour that the framework ``dropwizard'' exhibited
+when new-lines was passed to the terminal.
+
+\subsection{Reflect}\label{task-1c-reflect}
+% TODO: Finish this section ..
