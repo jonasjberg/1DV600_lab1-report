@@ -1,0 +1,135 @@
+% ______________________________________________________________________________
+%
+%   1DV600 - Software Technology
+%   Assignment 1 -- "Personal planning, Vision and Project Plan"
+%
+%  Author:  Jonas Sjöberg
+%           Linnaeus University
+%           js224eh@student.lnu.se
+%           https://github.com/jonasjberg
+%
+%    Date:  2017-02-01 -- 2017-02-05
+%
+% License:  Creative Commons Attribution 4.0 International (CC BY 4.0)
+%           <http://creativecommons.org/licenses/by/4.0/legalcode>
+%           See LICENSE.md for additional licensing information.
+% ______________________________________________________________________________
+
+
+% ______________________________________________________________________________
+\section{Task 1 -- Personal Planning}
+
+\subsubsection{Instructions}\label{task-1-instructions}
+
+\begin{quote}
+  When the client requests a list of books to present for the user it does the
+  call \texttt{http://localhost:9090/api/books/} to the server and it expects
+  the answer as a JSON object (an associative array). We are going to split the
+  functionality into three tasks, but it is your task to plan these tasks. Take
+  into account the time for learning and understanding of the problem when you
+  plan the time. Make your planning with 15 minutes as the minimum unit. Repeat
+  the following pattern for all subtasks (A, B, C):
+  
+  \begin{itemize}
+    \tightlist
+    \item Plan
+    \item Implement
+    \item Reflect
+  \end{itemize}
+  
+  Each subtask should be documented with at least 100 words.
+\end{quote}
+
+
+% ______________________________________________________________________________
+\subsection{Subtask A -- Books}\label{task-1a}
+\subsubsection{Instructions}\label{task-1a-instructions}
+
+\begin{quote}
+	The main objective of the subtask is to create a list of books and a function
+	or method to get them. There are slight differences depending on which
+	implementation you are using, either Java or Node.js but those differences
+	will be clearly noted. Common for both is that they should handle books, and
+	for each book we need the information id, title, author, genre, publish date,
+  price and description.
+
+\mbox{}%
+\subparagraph{Java}\label{java}
+
+Create a class in the package ``models'' that represents a book. After
+that, create a short list of fictive (or real) objects in the function
+getBooks that is available in GetBooksResource. When calling the URL
+http://localhost:9090/api/books the list of books should be outputted
+with System.out.println. The subtask is done when you see the objects in
+the terminal (where vagrant is run).
+\end{quote}
+
+\subsubsection{Plan}\label{plan}
+
+The \texttt{book} class is a critical datatype that will be used
+throughout the software. As such, the class should be extendable and
+designed according to the ``{[}open/closed principle{]}{]}'',
+
+The class must meet the following requirements:
+
+\begin{itemize}
+\tightlist
+\item
+  Encapsulate the information needed to describe books contained in the
+  system
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Id
+  \item
+    Title
+  \item
+    Author
+  \item
+    genre
+  \item
+    Date of publication
+  \item
+    price
+  \item
+    Description
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Implement}\label{implement}
+
+\subsubsection{Reflect}\label{reflect}
+
+
+% ______________________________________________________________________________
+\subsection{Subtask B -- JSON}\label{subtask-b-json}
+
+\subsubsection{Instructions}\label{instructions-2}
+
+\begin{quote}
+Convert the objects created in subtask a into an JSON object and show it
+in the terminal using either System.out.println(Java) or console.log
+(Node.js).
+
+\mbox{}%
+\subparagraph{Improvement Strategies}\label{improvement-strategies}
+
+Choose two improvement strategies based on your reflections on subtask a
+and b. Describe what you have decided to improve and why. Implement your
+improvements in the next subtask.
+\end{quote}
+
+
+% ______________________________________________________________________________
+\subsection{Subtask C -- Web}\label{subtask-c-web}
+
+In this subtask you are to answer the request in the web browser instead
+of printing it to the terminal. The subtask is done when you see the
+JSON object on screen. For inspiration, have a look at PingResource that
+you find in the same folder as the GetBooksResource. If you follow the
+\href{https://htmlpreview.github.io/?https://github.com/tobias-dv-lnu/1dv600-lab/blob/master/api-specification/api-specification.html}{API
+for the model} (as seen in
+\href{https://htmlpreview.github.io/?https://github.com/tobias-dv-lnu/1dv600-lab/blob/master/api-specification/api-specification.html\#books-get}{GET
+api/books})​, you will be able to show the books in the list.
+
