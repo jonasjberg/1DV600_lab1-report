@@ -19,7 +19,8 @@
 % ______________________________________________________________________________
 \section{Task 1 -- Personal Planning}
 
-\subsubsection{Instructions}\label{task-1-instructions}
+\subsection{Instructions}\label{task-1-instructions}
+Instructions quoted as-is from the course Wiki \cite{1dv600:lab1:instructions}.
 
 \begin{quote}
   When the client requests a list of books to present for the user it does the
@@ -42,70 +43,88 @@
 
 
 % ______________________________________________________________________________
-\subsection{Subtask A -- Books}\label{task-1a}
-\subsubsection{Instructions}\label{task-1a-instructions}
+\section{Subtask A -- Books}\label{task-1a}
+\subsection{Instructions}\label{task-1a-instructions}
 
 \begin{quote}
-	The main objective of the subtask is to create a list of books and a function
-	or method to get them. There are slight differences depending on which
-	implementation you are using, either Java or Node.js but those differences
-	will be clearly noted. Common for both is that they should handle books, and
-	for each book we need the information id, title, author, genre, publish date,
-  price and description.
+  The main objective of the subtask is to create a list of books and a function
+  or method to get them. There are slight differences depending on which
+  implementation you are using, either Java or Node.js but those differences
+  will be clearly noted. Common for both is that they should handle books,
+  and for each book we need the information id, title, author, genre, publish
+  date, price and description.
 
-\mbox{}%
-\subparagraph{Java}\label{java}
-
-Create a class in the package ``models'' that represents a book. After
-that, create a short list of fictive (or real) objects in the function
-getBooks that is available in GetBooksResource. When calling the URL
-http://localhost:9090/api/books the list of books should be outputted
-with System.out.println. The subtask is done when you see the objects in
-the terminal (where vagrant is run).
+  \subparagraph{Java}
+  Create a class in the package ``models'' that represents a book. After
+  that, create a short list of fictive (or real) objects in the function
+  getBooks that is available in GetBooksResource. When calling the URL
+  http://localhost:9090/api/books the list of books should be outputted
+  with System.out.println. The subtask is done when you see the objects in
+  the terminal (where vagrant is run).
 \end{quote}
 
-\subsubsection{Plan}\label{plan}
 
-The \texttt{book} class is a critical datatype that will be used
-throughout the software. As such, the class should be extendable and
-designed according to the ``{[}open/closed principle{]}{]}'',
+\subsection{Plan}\label{task-1a-plan}
+The \texttt{book} class is a critical datatype that will be used throughout the
+software. As such, it would probably be wise to design the class in a way as 
+to make it flexible and open for future modifications, as stated by the well known
+``open/closed principle'' \cite{SOLID:OCP}, briefly stated \cite{SOLID:OCP:Meyer}:
 
-The class must meet the following requirements:
+\begin{quote}
+  software entities (classes, modules, functions, etc.) should be open for
+  extension, but closed for modification
+\end{quote}
+
+
+The class \texttt{book} should meet the following requirements:
 
 \begin{itemize}
 \tightlist
-\item
-  Encapsulate the information needed to describe books contained in the
-  system
+  \item Store information needed to describe books handled by the system.
+        We are to include the following set of attributes:
 
   \begin{itemize}
-  \tightlist
-  \item
-    Id
-  \item
-    Title
-  \item
-    Author
-  \item
-    genre
-  \item
-    Date of publication
-  \item
-    price
-  \item
-    Description
+    \tightlist
+    \item Id
+    \item Title
+    \item Author
+    \item genre
+    \item Date of publication
+    \item Price
+    \item Description
   \end{itemize}
+
+  \item Provide suitable interfaces for accessing and possibly modifying the 
+        data encapsulated in the class.
 \end{itemize}
 
-\subsubsection{Implement}\label{implement}
+The initial plan is to implement a basic class with traditional mutators for
+accessing private fields. This first implementation will use primitive data
+types for its fields, which often means future expansion and modifications will
+require refactoring. 
 
-\subsubsection{Reflect}\label{reflect}
+This design opposes the previously mentioned ``open/closed principle'', but
+future refactoring seems a reasonable tradeoff in order to get a prototype
+working as soon as possible.
+
+This implementation should use the least amount of code possible to meet the
+requirements.
+
+% TODO: Finish this section
+% We will have to refactor the code at some point in the future.
+
+% Wrapper data types would be better
+
+
+\subsection{Implement}\label{implement}
+
+\subsection{Reflect}\label{reflect}
 
 
 % ______________________________________________________________________________
-\subsection{Subtask B -- JSON}\label{subtask-b-json}
+\section{Subtask B -- JSON}\label{subtask-b-json}
 
-\subsubsection{Instructions}\label{instructions-2}
+\subsection{Instructions}\label{instructions-2}
 
 \begin{quote}
 Convert the objects created in subtask a into an JSON object and show it
@@ -122,7 +141,7 @@ improvements in the next subtask.
 
 
 % ______________________________________________________________________________
-\subsection{Subtask C -- Web}\label{subtask-c-web}
+\section{Subtask C -- Web}\label{subtask-c-web}
 
 In this subtask you are to answer the request in the web browser instead
 of printing it to the terminal. The subtask is done when you see the
