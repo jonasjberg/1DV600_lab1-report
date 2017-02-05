@@ -55,22 +55,16 @@
             colorlinks=false,
             hidelinks]{hyperref}
 
-\newcommand{\screenshot}[4]{
-\begin{figure}[H]
-\centering
-%\includegraphics[width=\linewidth]{#1}
-\includegraphics[height=8.0cm]{#1}
-\caption[#2]{#3}
-\label{#4}
-\end{figure}
-}
-
 \usepackage{minted}
 \usemintedstyle{bw}
 
 \usepackage{verbatim}
 \usepackage{fancyvrb}
 \usepackage{listings}
+
+% For inline, horizontal enumeration ("enumerate")
+\usepackage[inline]{enumitem}
+
 
 \newmintedfile[shellcode]{bash}{
 %bgcolor=mintedbackground,
@@ -153,37 +147,37 @@ texcl=false,
 \usepackage{pdfpages}
 
 \newcommand{\shellsource}[3]{
-\begin{listing}[H]
-\shellcode{#1}
-\caption{#2}
-\label{#3}
-\end{listing}
+  \begin{listing}[H]
+    \shellcode{#1}
+    \caption{#2}
+    \label{#3}
+  \end{listing}
 }
 
 \newcommand{\configsource}[3]{
-\begin{listing}[H]
-\configfile{#1}
-\caption{#2}
-\label{#3}
-\end{listing}
+  \begin{listing}[H]
+    \configfile{#1}
+    \caption{#2}
+    \label{#3}
+  \end{listing}
 }
 
 \newcommand{\javasource}[3]{
-\begin{listing}[H]
-\shellcode{#1}
-\caption{#2}
-\label{#3}
-\end{listing}
+  \begin{listing}[H]
+    \shellcode{#1}
+    \caption{#2}
+    \label{#3}
+  \end{listing}
 }
 
 \newcommand{\screenshot}[4]{
-\begin{figure}[H]
-\centering
-\includegraphics[width=\linewidth]{#1}
-%\includegraphics[height=8.0cm]{#1}
-\caption[#2]{#3}
-\label{#4}
-\end{figure}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{#1}
+    %\includegraphics[height=8.0cm]{#1}
+    \caption[#2]{#3}
+    \label{#4}
+  \end{figure}
 }
 
 

@@ -131,7 +131,31 @@ I know for a fact that this simple implementation will need serious rework
 in order to be extended. But making the design more involved and modular
 at this stage, with no information to go on, could possibly be a waste of time.
 
-There is a tradeoff between more initial work on features that might not even
+This kind of tradeoff seems to reoccur and turn up in various forms. The tradeoff
+is that between 
+
+% \begin{enumerate*}[label={\alph*}]
+\begin{enumerate*}
+  \item Try to make assumtions on future usage and demands and design for
+        maximum flexibility and modularity. Means more initial work is needed
+        to reach a minimum working state, but can pay off in the long run,
+        the design makes modification and extension easier.
+        The risk is that the extra functionality and complexity might go
+        complete unused, and the whole enterprise is thus a complete waste of time.
+  \item Assume very little about future developments, use the simplest possible
+        design that meets the requirements. Accept that the simple solution is
+        more rigid and sensitive to changes --- future changes in requirements 
+        or functionality will require major refactoring.
+\end{enumerate*}
+
+% \begin{enumerate*}[label={\alph*)},font={\color{red!50!black}\bfseries}]
+% \item bananas
+% \item apples
+% \item oranges and
+% \item lemons.
+% \end{enumerate*}
+
+between more initial work on features that might not even
 be useful in the future, but allowing for easier future expansion, versus less
 initial work which meets the current requirements but compounds additinal work
 over time due to a simple architecture that is more rigid and sensitive to
@@ -170,7 +194,7 @@ constructing the strings was re-used from the previous subtask.
 The method that returns the JSON data, ``toJSON'' is shown in Listing~\ref{listing:tojson1}.
 
 \javasource{include/tojson1.java}
-           {Initial implementation of the \texttt{toJSON()} method in the
+           {Initial implementation of the \texttt{toJSON\(\)} method in the
             \texttt{Book} class.}
            {listing:tojson1}
 
@@ -178,13 +202,16 @@ The method that returns the JSON data, ``toJSON'' is shown in Listing~\ref{listi
 
 \subsection{Reflect}\label{task-1b-reflect}
 This should really be solved using the standard libraries native functions for
-handling JSON. In any case, the functions that take an object state and return
-a JSON representation should be extracted into a separate utility package for
-re-use across the entire project or even across all company projects.
+handling JSON. 
+At the very least, these methods should be extracted and refactored into
+utility functions stored in a separate package with other similar ``utility''
+code.  This enables re-use across the entire project. Many companies re-use
+utility code across many if not all projects.
+
 
 \subsubsection{Improvement Strategies}
-Based on the reflections on Subtask A \cite{task-1a-reflect} and Subtask B
-\cite{task-1b-reflect}, I have chosen the two following improvements:
+Based on the reflections on Subtask A \ref{task-1a-reflect} and Subtask B
+\ref{task-1b-reflect}, I have chosen the two following improvements:
 
 \begin{itemize}
   \item Improve JSON handling by leveraging the Java libraries.
