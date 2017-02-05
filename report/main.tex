@@ -20,8 +20,8 @@
 
 \usepackage[utf8]{inputenc}
 \inputencoding{utf8}
-\usepackage[]{babel}
-\usepackage[]{isodate}
+\usepackage[swedish,english]{babel}
+\usepackage[swedish]{isodate}
 \usepackage[T1]{fontenc}
 
 \usepackage{lmodern}
@@ -144,8 +144,8 @@ texcl=false,
 \expandafter\def\csname PY@tok@err\endcsname{}
 \expandafter\def\csname PYGdefault@tok@err\endcsname{\def\PYGdefault@bc##1{{\strut ##1}}}
 
-\renewcommand\listingscaption{Programlistning}
-\renewcommand\listoflistingscaption{Programlistningar}
+\renewcommand\listingscaption{Listing}
+\renewcommand\listoflistingscaption{List of listings}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -163,6 +163,14 @@ texcl=false,
 \newcommand{\configsource}[3]{
 \begin{listing}[H]
 \configfile{#1}
+\caption{#2}
+\label{#3}
+\end{listing}
+}
+
+\newcommand{\javasource}[3]{
+\begin{listing}[H]
+\shellcode{#1}
 \caption{#2}
 \label{#3}
 \end{listing}
