@@ -208,7 +208,8 @@ Based on the reflections on Subtask A \ref{task-1a-reflect} and Subtask B
 
 \begin{enumerate}
   \item Improve \texttt{JSON} handling by leveraging the Java libraries.
-  \item Create classes to act as containers for metadata fields.
+  \item Create classes to wrap primitive data types -- add containers for the
+        metadata fields such as author, title, etc.
 \end{enumerate}
 
 
@@ -237,10 +238,10 @@ As per the instructions, the plan is to look for the existing code to hints
 on how to meet the requested functionality.
 
 The chosen improvement strategies will be solved by using the suggested JSON
-library ``jackson''\cite{ackson-json}.
+library ``jackson''\cite{jackson-json}.
 
 \subsection{Implement}\label{task-1c-implement}
-The implementation was done as part of experimeting with the previous two
+The implementation was done as part of experimenting with the previous two
 subtasks and the strange behaviour that the framework ``dropwizard'' exhibited
 when new-lines was passed to the terminal.
 
@@ -252,6 +253,25 @@ method ``\texttt{toJSON()}'' is shown in Listing~\ref{listing:tojson2}.
             \texttt{Book} class.}
            {listing:tojson2}
 
+The book metadata field ``genre'' in the \texttt{Book} class was improved by
+using an enum instead of a string. This adds type checking as the compiler will
+catch any errors at compile-time. The genre must be set to one of the
+predetermined set of possible values. The enum type also opens up for future
+addition of other functionality.
+
 
 \subsection{Reflect}\label{task-1c-reflect}
-% TODO: Finish this section ..
+The modifications done to the class was minor but did improve the overall
+quality and robustness of the code.
+
+All the metadata fields should probably completely wrap their contained data. 
+Possibly, an abstract class called ``MetadataField'' could be added. This class
+would have functionality for setting and getting the metadata value in a safe
+and controlled manner.
+
+Specific fields, for example ``author'' could also be stored in a class
+``AuthorMeta'' that inherits from the ``MetadataField'' class. These subclasses
+would then add their own behaviour, specific to their contained metadata.
+
+This would allow future expansion and handling of special cases like multiple
+authors, etc.
