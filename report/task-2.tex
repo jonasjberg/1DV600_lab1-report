@@ -20,6 +20,8 @@
 \section{Task 2 -- Vision}\label{task-2-vision}
 
 \subsubsection{Instructions}\label{task-2-instructions}
+Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
+
 \begin{quote}
   Create a vision document for the system. This should be a document covering
   about half an A4 page describing the system. The purpose of the document is
@@ -30,3 +32,68 @@
 \end{quote}
 
 
+\subsection{Vision Document}\label{task-2-vision}
+The project described is a web-application for managing a collection of books.
+This application is the foundation for a library system for books where you can
+add, modify and delete books.
+
+
+\subsubsection{Intended use}
+The user should be able to add books to the collection.
+Adding a book means that the book metadata should be provided.
+Books are added by manual entry -- the user fills out a form with a
+predetermined set of fields, thereby populating the book metadata.
+
+The application should be able to handle common user errors and missing data.
+
+The program should be able to present the book collection to the user in a
+table-like format, with one book per row. Each column displays one metadata
+field and the columns are populated with metadata for the book at that row. 
+
+The user should be able to delete books from the database by clicking a
+suitably named button.
+
+
+\subsubsection{Design}
+Books are stored in a database using \texttt{JSON} serialization and basic
+key/value lookup.
+
+Each book has an unique id. No two books can have the same id.  The id can be
+used as a handle or reference to a certain book stored in the database.
+
+Each book is described by and stored with a set of metadata fields.  We are
+provided with a set of required fields which will be used as a starting point:
+
+\begin{itemize}
+  \item Id
+  \item Title
+  \item Author
+  \item genre
+  \item Date of publication
+  \item Price
+  \item Description
+\end{itemize}
+
+The only field that must be present is the id.
+
+
+\subsubsection{Extended functionality}
+These are ideas on possible extra, ``wishlist'' functionality that could be
+added in future releases.
+
+I have previously written a program in Python that automatically renames ebooks
+from analysis and querying servers with \texttt{ISBN}-numbers to fill out
+missing fields. Software for managing ebooks often have this kind of
+functionality, one example is the open source software package
+``calibre''\cite{calibre}.
+
+This program could also be extended to query services for any missing metadata
+fields. I have some previous experience with automatic metadata extraction from
+various documents and related metadata.
+
+It also possible to add functionality for the program to populate all fields
+automatically if the user simply enters a valid \texttt{ISBN} number.
+
+
+\subsection{Reflection on the creation of a Vision Document}\label{task-2-reflect}
+% TODO: ..

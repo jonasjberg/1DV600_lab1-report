@@ -18,8 +18,8 @@
 
 % ______________________________________________________________________________
 \section{Task 1 -- Personal Planning}
-% \subsection{Instructions}\label{task-1-instructions}
-Instructions from the course Wiki \cite{1dv600:lab1:instructions}:
+\subsection{Instructions}\label{task-1-instructions}
+Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
 
 \begin{quote}
   When the client requests a list of books to present for the user it does the
@@ -29,21 +29,21 @@ Instructions from the course Wiki \cite{1dv600:lab1:instructions}:
   into account the time for learning and understanding of the problem when you
   plan the time. Make your planning with 15 minutes as the minimum unit. Repeat
   the following pattern for all subtasks (A, B, C):
-  
+
   \begin{itemize}
     \item Plan
     \item Implement
     \item Reflect
   \end{itemize}
-  
+
   Each subtask should be documented with at least 100 words.
 \end{quote}
 
 
 % ______________________________________________________________________________
 \section{Subtask A -- Books}\label{task-1a}
-% \subsection{Instructions}\label{task-1a-instructions}
-Instructions from the course Wiki \cite{1dv600:lab1:instructions}:
+\subsection{Instructions}\label{task-1a-instructions}
+Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
 
 \begin{quote}
   The main objective of the subtask is to create a list of books and a function
@@ -67,8 +67,7 @@ Instructions from the course Wiki \cite{1dv600:lab1:instructions}:
 The \texttt{book} class is a critical datatype that will be used throughout the
 software. As such, it would probably be wise to design the class in a way as to
 make it flexible and open for future modifications, as stated by the well known
-``open/closed principle'' \cite{Martin:1996:OPS} -- in brief
-\cite{SOLID:OCP:Meyer}:
+``open/closed principle''\cite{Martin:1996:OPS} -- in brief\cite{SOLID:OCP:Meyer}:
 
 \begin{quote}
   Software entities (classes, modules, functions, etc.) should be open for
@@ -96,16 +95,16 @@ The class \texttt{book} should meet the following requirements:
     \item Description
   \end{itemize}
 
-  \item Provide suitable interfaces for accessing and possibly modifying the 
+  \item Provide suitable interfaces for accessing and possibly modifying the
         data encapsulated in the class.
 \end{itemize}
 
 The initial plan is to implement a basic class with suitable private fields for
 storing data about a certain book, as well as traditional mutators for
-accessing private fields. 
+accessing private fields.
 
 This first implementation will use primitive data types for its fields, which
-often means future expansion and modifications will require refactoring. 
+often means future expansion and modifications will require refactoring.
 This design choice goes against the previously mentioned ``open/closed
 principle'', but future refactoring seems a reasonable tradeoff in order to get
 a prototype working as soon as possible.
@@ -116,11 +115,11 @@ requirements.
 
 \subsection{Implement}\label{task-1a-implement}
 The class was implemented in less than 10 minutes. What followed was
-investigating bugs in the underlying framework ``dropwizard''
-\cite{framework:dropwizard}.  The problems seems to be caused by printing a
-combination of newlines and other characters to ``stdout'', which is hooked by
-either ``dropwizard'' or the build system ``gradle'' \cite{tool:gradle}, in
-order to add additinal information and timestamps to the message.
+investigating bugs in the underlying framework ``dropwizard''\cite{framework:dropwizard}.
+The problems seems to be caused by printing a combination of newlines and other
+characters to ``stdout'', which is hooked by either ``dropwizard'' or the build
+system ``gradle''\cite{tool:gradle}, in order to add additinal information and
+timestamps to the message.
 
 
 \subsection{Reflect}\label{task-1a-reflect}
@@ -132,40 +131,40 @@ structure, including communication between different parts of the program which
 again uses some kind of data types.
 These details grow to reach ever larger parts of the source code as the software
 grows in size and complexity.
-I know for a fact that this simple implementation will need serious rework 
+I know for a fact that this simple implementation will need serious rework
 in order to be extended. But making the design more involved and modular
 at this stage, with no information to go on, could possibly be a waste of time.
 
-This kind of tradeoff seems to reoccur and turn up in various forms. 
+This kind of tradeoff seems to reoccur and turn up in various forms.
 The tradeoff is between the following two extremes:
 
 \begin{description}
-  \item [A] Try to predict future usage and development, design for maximum 
+  \item [A] Try to predict future usage and development, design for maximum
         flexibility and modularity. Means more initial work is needed to reach
         a minimum working state, but can pay off in the long run, the design
         makes modification and extension easier.  The risk is that the extra
         functionality and complexity might go complete unused, and the whole
         enterprise is thus a complete waste of time.
-  \item [B] Assume very little about future developments, use the simplest 
-        possible design that meets the requirements. Accept that the simple 
-        solution is more rigid and sensitive to changes --- future changes in 
+  \item [B] Assume very little about future developments, use the simplest
+        possible design that meets the requirements. Accept that the simple
+        solution is more rigid and sensitive to changes --- future changes in
         requirements or functionality will require major refactoring.
 \end{description}
 
 
 % ______________________________________________________________________________
 \section{Subtask B -- \texttt{JSON}}\label{subtask-b-json}
-% \subsection{Instructions}\label{task-1b-instructions}
-Instructions from the course Wiki \cite{1dv600:lab1:instructions}:
+\subsection{Instructions}\label{task-1b-instructions}
+Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
 
 \begin{quote}
   Convert the objects created in subtask a into an \texttt{JSON} object and show it in
   the terminal using either System.out.println(Java) or console.log (Node.js).
-  
+
   \subparagraph{Improvement Strategies}
-  
+
   Choose two improvement strategies based on your reflections on subtask a and
-  b. Describe what you have decided to improve and why. Implement your 
+  b. Describe what you have decided to improve and why. Implement your
   improvements in the next subtask.
 \end{quote}
 
@@ -195,7 +194,7 @@ in Listing~\ref{listing:tojson1}.
 
 \subsection{Reflect}\label{task-1b-reflect}
 This should really be solved using the standard libraries native functions for
-handling \texttt{JSON}. 
+handling \texttt{JSON}.
 At the very least, these methods should be extracted and refactored into
 utility functions stored in a separate package with other similar ``utility''
 code.  This enables re-use across the entire project. Many companies re-use
@@ -217,17 +216,17 @@ Based on the reflections on Subtask A \ref{task-1a-reflect} and Subtask B
 % ______________________________________________________________________________
 \section{Subtask C -- Web}\label{subtask-c-web}
 \subsection{Instructions}\label{task-1-instructions}
-Instructions from the course Wiki \cite{1dv600:lab1:instructions}:
+Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
 
 \begin{quote}
   In this subtask you are to answer the request in the web browser instead of
   printing it to the terminal. The subtask is done when you see the \texttt{JSON} object
   on screen. For inspiration, have a look at PingResource that you find in the
-  same folder as the GetBooksResource. 
+  same folder as the GetBooksResource.
 
-  If you follow the 
+  If you follow the
   \href{https://htmlpreview.github.io/?https://github.com/tobias-dv-lnu/1dv600-lab/blob/master/api-specification/api-specification.html}{API for the model}
-  (as seen in 
+  (as seen in
   \href{https://htmlpreview.github.io/?https://github.com/tobias-dv-lnu/1dv600-lab/blob/master/api-specification/api-specification.html\#books-get}{GET api/books})
   , you will be able to show the books in the list.
 \end{quote}
@@ -255,7 +254,7 @@ method ``\texttt{toJSON()}'' is shown in Listing~\ref{listing:tojson2}.
 
 The book metadata field ``genre'' in the \texttt{Book} class was improved by
 using an enum instead of a string. This adds type checking as the compiler will
-catch any errors at compile-time. The genre must be set to one of the
+catch any errors at compile-time -- the genre must be set to one of the
 predetermined set of possible values. The enum type also opens up for future
 addition of other functionality.
 
@@ -264,7 +263,7 @@ addition of other functionality.
 The modifications done to the class was minor but did improve the overall
 quality and robustness of the code.
 
-All the metadata fields should probably completely wrap their contained data. 
+All the metadata fields should probably completely wrap their contained data.
 Possibly, an abstract class called ``MetadataField'' could be added. This class
 would have functionality for setting and getting the metadata value in a safe
 and controlled manner.
