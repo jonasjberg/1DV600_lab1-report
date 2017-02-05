@@ -18,8 +18,8 @@
 
 % ______________________________________________________________________________
 \section{Task 1 -- Personal Planning}
-\subsection{Instructions}\label{task-1-instructions}
-Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
+\paragraph{Instructions}\label{task-1-instructions}
+from the course Wiki\cite{1dv600:lab1:instructions}:
 
 \begin{quote}
   When the client requests a list of books to present for the user it does the
@@ -41,9 +41,9 @@ Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
 
 
 % ______________________________________________________________________________
-\section{Subtask A -- Books}\label{task-1a}
-\subsection{Instructions}\label{task-1a-instructions}
-Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
+\subsection{Subtask A -- Books}\label{task-1a}
+\paragraph{Instructions}\label{task-1a-instructions}
+from the course Wiki\cite{1dv600:lab1:instructions}:
 
 \begin{quote}
   The main objective of the subtask is to create a list of books and a function
@@ -63,7 +63,7 @@ Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
 \end{quote}
 
 
-\subsection{Plan}\label{task-1a-plan}
+\subsubsection{Plan}\label{task-1a-plan}
 The \texttt{book} class is a critical datatype that will be used throughout the
 software. As such, it would probably be wise to design the class in a way as to
 make it flexible and open for future modifications, as stated by the well known
@@ -106,23 +106,25 @@ accessing private fields.
 This first implementation will use primitive data types for its fields, which
 often means future expansion and modifications will require refactoring.
 This design choice goes against the previously mentioned ``open/closed
-principle'', but future refactoring seems a reasonable tradeoff in order to get
+principle'', but future refactoring seems a reasonable trade-off in order to get
 a prototype working as soon as possible.
 
-This implementation should use the least amount of code possible to meet the
-requirements.
+
+In other words: this implementation should use the least amount of code
+possible to meet the requirements.
 
 
-\subsection{Implement}\label{task-1a-implement}
+\subsubsection{Implement}\label{task-1a-implement}
 The class was implemented in less than 10 minutes. What followed was
-investigating bugs in the underlying framework ``dropwizard''\cite{framework:dropwizard}.
+investigating bugs in the underlying framework
+``dropwizard''\cite{framework:dropwizard}.  
 The problems seems to be caused by printing a combination of newlines and other
 characters to ``stdout'', which is hooked by either ``dropwizard'' or the build
-system ``gradle''\cite{tool:gradle}, in order to add additinal information and
-timestamps to the message.
+system ``gradle''\cite{tool:gradle}, in order to add additional information and
+timestamps to the message.  An error occurs somewhere along this chain.
 
 
-\subsection{Reflect}\label{task-1a-reflect}
+\subsubsection{Reflect}\label{task-1a-reflect}
 This simple implementation matches the criteria which seems vague at this point,
 the \texttt{book} class presents its state in \texttt{JSON}-format, and so deciding on
 implementation details becomes very difficult. These details are for example
@@ -135,8 +137,8 @@ I know for a fact that this simple implementation will need serious rework
 in order to be extended. But making the design more involved and modular
 at this stage, with no information to go on, could possibly be a waste of time.
 
-This kind of tradeoff seems to reoccur and turn up in various forms.
-The tradeoff is between the following two extremes:
+This kind of trade-off seems to reoccur and turn up in various forms.
+The trade-off is between the following two extremes:
 
 \begin{description}
   \item [A] Try to predict future usage and development, design for maximum
@@ -153,9 +155,9 @@ The tradeoff is between the following two extremes:
 
 
 % ______________________________________________________________________________
-\section{Subtask B -- \texttt{JSON}}\label{subtask-b-json}
-\subsection{Instructions}\label{task-1b-instructions}
-Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
+\subsection{Subtask B -- \texttt{JSON}}\label{task-1b}
+\paragraph{Instructions}\label{task-1b-instructions}
+from the course Wiki\cite{1dv600:lab1:instructions}:
 
 \begin{quote}
   Convert the objects created in subtask a into an \texttt{JSON} object and show it in
@@ -169,7 +171,7 @@ Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
 \end{quote}
 
 
-\subsection{Plan}\label{task-1b-plan}
+\subsubsection{Plan}\label{task-1b-plan}
 As with the first subtask, the plan is to use the simplest possible solution
 that meets the requirements.
 The first implementation will use simple, error-prone and crude raw string
@@ -179,7 +181,7 @@ methods for converting from Java objects to \texttt{JSON}-data could be refactor
 a separate utility package.
 
 
-\subsection{Implement}\label{task-1b-implement}
+\subsubsection{Implement}\label{task-1b-implement}
 The code was written in less than 5 minutes. The basic method for
 constructing the strings was re-used from the previous subtask.
 
@@ -192,7 +194,7 @@ in Listing~\ref{listing:tojson1}.
            {listing:tojson1}
 
 
-\subsection{Reflect}\label{task-1b-reflect}
+\subsubsection{Reflect}\label{task-1b-reflect}
 This should really be solved using the standard libraries native functions for
 handling \texttt{JSON}.
 At the very least, these methods should be extracted and refactored into
@@ -201,7 +203,7 @@ code.  This enables re-use across the entire project. Many companies re-use
 utility code across many if not all projects.
 
 
-\subsubsection{Improvement Strategies}
+\paragraph{Improvement Strategies}
 Based on the reflections on Subtask A \ref{task-1a-reflect} and Subtask B
 \ref{task-1b-reflect}, the two following improvements was chosen:
 
@@ -214,9 +216,9 @@ Based on the reflections on Subtask A \ref{task-1a-reflect} and Subtask B
 
 
 % ______________________________________________________________________________
-\section{Subtask C -- Web}\label{subtask-c-web}
-\subsection{Instructions}\label{task-1-instructions}
-Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
+\subsection{Subtask C -- Web}\label{task-1c}
+\paragraph{Instructions}\label{task-1c-instructions}
+from the course Wiki\cite{1dv600:lab1:instructions}:
 
 \begin{quote}
   In this subtask you are to answer the request in the web browser instead of
@@ -232,14 +234,14 @@ Instructions from the course Wiki\cite{1dv600:lab1:instructions}:
 \end{quote}
 
 
-\subsection{Plan}\label{task-1c-plan}
+\subsubsection{Plan}\label{task-1c-plan}
 As per the instructions, the plan is to look for the existing code to hints
 on how to meet the requested functionality.
 
 The chosen improvement strategies will be solved by using the suggested JSON
 library ``jackson''\cite{jackson-json}.
 
-\subsection{Implement}\label{task-1c-implement}
+\subsubsection{Implement}\label{task-1c-implement}
 The implementation was done as part of experimenting with the previous two
 subtasks and the strange behaviour that the framework ``dropwizard'' exhibited
 when new-lines was passed to the terminal.
@@ -253,13 +255,13 @@ method ``\texttt{toJSON()}'' is shown in Listing~\ref{listing:tojson2}.
            {listing:tojson2}
 
 The book metadata field ``genre'' in the \texttt{Book} class was improved by
-using an enum instead of a string. This adds type checking as the compiler will
-catch any errors at compile-time -- the genre must be set to one of the
-predetermined set of possible values. The enum type also opens up for future
-addition of other functionality.
+using an \texttt{enum} instead of a string. This adds type checking as the
+compiler will catch any errors at compile-time -- the genre must be set to one
+of the predetermined set of possible values. The \texttt{enum} type also opens
+up for future addition of other functionality.
 
 
-\subsection{Reflect}\label{task-1c-reflect}
+\subsubsection{Reflect}\label{task-1c-reflect}
 The modifications done to the class was minor but did improve the overall
 quality and robustness of the code.
 

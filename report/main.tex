@@ -73,6 +73,9 @@
 \usepackage{fancyvrb}
 \usepackage{listings}
 
+% Used to remove numbering of some sections.
+% \renewcommand*\thesection{\arabic{section}}
+
 
 \newmintedfile[shellcode]{bash}{
 %bgcolor=mintedbackground,
@@ -202,6 +205,7 @@ texcl=false,
   \texttt{http://www.jonasjberg.com}
 }
 
+\setcounter{section}{-1}
 \date{}
 
 \begin{document}
@@ -225,6 +229,7 @@ texcl=false,
     this includes documentation, planning, testing, estimations of requirements, etc.
   \end{abstract}
 
+  \clearpage
   %\hypersetup{linkcolor=black}
   \setcounter{tocdepth}{3}
   \tableofcontents
@@ -233,18 +238,21 @@ texcl=false,
 
   %\listoffigures
   %\listoftables
-  %\listoflistings
+  \listoflistings
 
   %\expandafter\def\csname PY@tok@err\endcsname{}
+  \bigskip
+  \bigskip
+  \input{intro.tex}
 
-  \input{introduction.tex}
   \clearpage
   \input{task-1.tex}
+
   \clearpage
   \input{task-2.tex}
+
   \clearpage
   \input{task-3.tex}
-  \clearpage
 
   \addcontentsline{toc}{section}{References}
   \printbibliography{}
