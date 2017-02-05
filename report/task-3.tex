@@ -34,4 +34,44 @@ from the course Wiki\cite{1dv600:lab1:instructions}:
 
 
 % ______________________________________________________________________________
-\subsection{Vision Document}\label{task-3-project-plan}
+\subsection{Project Plan}\label{task-3-project-plan}
+
+\subsubsection{Overarching Goals}\label{task-3-goals}
+The main overarching goal of the project is to produce a simple library system
+for managing a collection of books.
+
+Starting points:
+
+\begin{enumerate}
+  \item Fix bugs in the build system. Currently, I am unable to redeploy
+        without restarting the virtual machine that runs the web server, which
+        is completely unacceptable.
+  \item Research the frontend source code to better understand how exceptions
+        seem to be thrown for simple errors in the \texttt{JSON} data, like
+        stray commas and whitespace.
+  \item Develop classes to act as containers for all metadata fields,
+        eliminating use of primitive data types to storage book metadata.
+  \item Continously adjust and re-evaluate during continous integration as
+        problems occur when connecting the code being developed with the
+        given front-end code.
+\end{enumerate}
+
+I will initially focus mainly on the above issues. The project plan is thus
+expected to change drastically during development.
+
+
+\subsubsection{Planning Strategy}
+I will initially focus primarily on these main points. More detailed planning
+currently barely seems worthwhile as the overarching starting points are very
+likely to shift or change rapidly.
+Additionally, I lack serious experience with web development in general.  And
+in particular the build system \texttt{gradle} \cite{tool:gradle}, the
+\texttt{VirtualBox} \cite{virtualbox:vdidetails} wrapper \texttt{Vagrant} and
+the provided front-end based on the \texttt{dropwizard}
+\cite{framework:dropwizard} framework.
+
+So I am not able to produce a valid long-term plan. The project has no choice
+but to adopt a more ``agile'' approach.
+
+I will adopt an iterative, agile approach -- short concise changes and constant
+re-evaluation of the planning.
