@@ -134,19 +134,18 @@ at this stage, with no information to go on, could possibly be a waste of time.
 This kind of tradeoff seems to reoccur and turn up in various forms. The tradeoff
 is that between 
 
-% \begin{enumerate*}[label={\alph*}]
-\begin{enumerate*}
-  \item Try to make assumtions on future usage and demands and design for
-        maximum flexibility and modularity. Means more initial work is needed
-        to reach a minimum working state, but can pay off in the long run,
-        the design makes modification and extension easier.
-        The risk is that the extra functionality and complexity might go
-        complete unused, and the whole enterprise is thus a complete waste of time.
-  \item Assume very little about future developments, use the simplest possible
-        design that meets the requirements. Accept that the simple solution is
-        more rigid and sensitive to changes --- future changes in requirements 
-        or functionality will require major refactoring.
-\end{enumerate*}
+\begin{description}
+  \item [A] Try to predict future usage and development, design for maximum 
+        flexibility and modularity. Means more initial work is needed to reach
+        a minimum working state, but can pay off in the long run, the design
+        makes modification and extension easier.  The risk is that the extra
+        functionality and complexity might go complete unused, and the whole
+        enterprise is thus a complete waste of time.
+  \item [B] Assume very little about future developments, use the simplest 
+        possible design that meets the requirements. Accept that the simple 
+        solution is more rigid and sensitive to changes --- future changes in 
+        requirements or functionality will require major refactoring.
+\end{description}
 
 % \begin{enumerate*}[label={\alph*)},font={\color{red!50!black}\bfseries}]
 % \item bananas
