@@ -1,0 +1,12 @@
+2017-02-05 19:14:30 +0100 Jonas Sjöberg Add skeleton time log with old table.
+2017-02-05 18:45:05 +0100 Jonas Sjöberg Major fix-up, update and restructure.
+2017-02-05 17:26:19 +0100 Jonas Sjöberg Update report. Add first draft of Task 2.
+2017-02-05 08:05:15 +0100 Jonas Sjöberg Complete first draft of Task 1.
+2017-02-05 07:29:13 +0100 Jonas Sjöberg Update .. Add second JSON implementation.
+2017-02-05 01:50:33 +0100 Jonas Sjöberg Remove inline enumeration ..
+2017-02-05 01:45:39 +0100 Jonas Sjöberg Add inline enumeration.
+2017-02-05 01:20:14 +0100 Jonas Sjöberg Various. Add code listing.
+2017-02-04 20:47:16 +0100 Jonas Sjöberg Update report ..
+2017-02-04 19:20:56 +0100 Jonas Sjöberg Update report ..
+2017-02-04 16:47:40 +0100 Jonas Sjöberg Add initial incomplete skeleton files.
+2017-02-04 16:47:24 +0100 Jonas Sjöberg Initial commit.
