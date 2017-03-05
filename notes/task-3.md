@@ -1,0 +1,14 @@
+Task 3 -- Project Plan
+======================
+
+Instructions
+------------
+
+> Write a project plan for the project. This project plan should show the way
+> to the complete and finished application, something that you should be able
+> to follow. Write as much as possible in the project plan, add the milestones
+> from Assignment Overview, and update the document throughout the course when
+> you know more in the later assignments.  Again, as an addition, write down
+> your reflections on creating a project plan. This reflection should be about
+> 100 words.
+
